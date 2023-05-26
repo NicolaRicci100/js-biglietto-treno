@@ -10,18 +10,21 @@ console.log('età dichiarata ' + userAge);
 
 //calcola prezzo biglietto basandosi sui km scelti dell'utente tenendo in considerazione il costo di 0.21€ al km
 const basePrice = userDistance * 0.21;
+console.log('prezzo del biglietto base ' + basePrice);
+
 let reducedPrice;
 
 //applicazione sconti
 if (userAge < 18) {
-    let reducedPrice = (basePrice * 20) / 100;
+    reducedPrice = (basePrice * 20) / 100;
     console.log('costo biglietto applicando sconto del 20% ' + (basePrice - reducedPrice) + '€');
 } else if (userAge > 65) {
-    let reducedPrice = (basePrice * 40) / 100;
+    reducedPrice = (basePrice * 40) / 100;
     console.log('costo biglietto applicando sconto del 40% ' + (basePrice - reducedPrice) + '€');
 } else {
-    let reducedPrice = 0;
+    reducedPrice = 0;
     console.log('costo biglietto senza sconto ' + (basePrice - reducedPrice) + '€');
 }
-document.getElementById('tiket-price').innerText = basePrice - reducedPrice;
+//prezzo finale del biglietto
+document.getElementById('tiket-price').innerText = (basePrice - reducedPrice).toFixed(2) + '€';
 
