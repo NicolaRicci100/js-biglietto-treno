@@ -21,6 +21,6 @@ if (userAge < 18) {
 } else {
     let reducedPrice = 0;
     console.log('costo biglietto senza sconto ' + (basePrice - reducedPrice) + '€');
-}
-document.getElementById('tiket-price').innerText = basePrice - reducedPrice;
 
+document.getElementById('tiket-price').innerText = basePrice - reducedPrice;
+}
